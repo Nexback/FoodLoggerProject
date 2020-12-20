@@ -4,8 +4,6 @@ const mongoose = require('mongoose');
 
 
  const UsersSchema = new mongoose.Schema({
-   //add requirements
-
    email: {
      type:String,
      required: true,
