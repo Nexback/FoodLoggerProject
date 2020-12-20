@@ -19,7 +19,7 @@ const mongoose = require('mongoose');
    },
 
    birthdate: {
-     type:Date,
+     type: String,
      required: true,
      default: "",
    },

@@ -1,4 +1,3 @@
-const user = require('../models/user');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const e = require('express');
@@ -15,7 +14,7 @@ module.exports = app => {
             const password = req.body.password;
             const fName = req.body.firstName;
             const lName = req.body.lastName;
-            const birthday = req.body.birthday;
+            const birthdate = req.body.birthdate;
 
             Users.findOne({email: email}, async function(err, user){
                 if(!user){
@@ -23,7 +22,7 @@ module.exports = app => {
                     newUser.firstName = fName;
                     newUser.lastName = lName;
                     newUser.email = email;
-                    newUser.birthday = birthday;
+                    newUser.birthdate = birthdate;
                     newUser.password = bcrypt.hashSync(password, 12);
 
                     const user = await newUser.save();
