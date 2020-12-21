@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const timestamp = require("mongoose-timestamp");
 
 const FoodsSchema = new mongoose.Schema({
-  //add requirements
   name: {
     type: String,
     required: true,
