@@ -35,6 +35,12 @@ const mongoose = require('mongoose');
     required: true,
     default: "",
   }, 
+
+    foodList: {
+      type: Array,
+      required: false,
+      default: [],
+    }
  });
  UsersSchema.plugin(timestamp);
 

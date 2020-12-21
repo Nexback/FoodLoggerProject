@@ -28,7 +28,7 @@ const FoodsSchema = new mongoose.Schema({
 
   picture: {
     type: GridFs,
-    required: true,
+    required: false,
   },
 });
 FoodsSchema.plugin(timestamp);

@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Homepage</title>
+</head>
+<style>
+
+</style>
+<script>
+    function logout()
+    {
+        sessionStorage.clear();
+        location.href = "http://localhost:3000/";
+    }
+</script>
+<body>
+    Food?
+    <button onclick="logout();"> Log out </button>
+</body>
+</html>

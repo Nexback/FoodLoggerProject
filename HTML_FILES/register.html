@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Register</title>
+</head>
+<style>
+
+</style>
+<script>
+	async function onsubmitFunc(e) {
+        e.preventDefault();
+        var form = document.querySelector("#signup");
+          data = {
+            email : form.querySelector('input[name="email"]').value,
+            password : form.querySelector('input[name="password"]').value,
+            firstName : form.querySelector('input[name="firstName"]').value,
+            lastName : form.querySelector('input[name="lastName"]').value,
+            birthdate : form.querySelector('input[name="birthdate"]').value
+          }
+
+          let response = await fetch('signup', {
+                  method: 'POST', // or 'PUT'
+                  headers: {
+                      'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify(data),
+          })
+          let text = await response.text(); // read response body as text
+      }
+
+</script>
+<body>
+    <form id="signup" onsubmit="onsubmitFunc(event)">
+        <input type="text" name="email" placeholder="email"><br/>
+        <input type="text" name="password" placeholder="password"><br/>
+        <input type="text" name="firstName" placeholder="firstName"><br/>
+        <input type="text" name="lastName" placeholder="lastName"><br/>
+        <input type="date" name="birthdate">
+        <input type="submit">
+    </form>
+    <a href="http://localhost:3000/login"> Log in instead </a>
+</body>
+</html>
